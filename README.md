@@ -14,6 +14,7 @@ Aplikasi dashboard modern untuk mengelola produk dan user menggunakan:
 - CRUD User melalui `/api/users`
 - CRUD Product melalui `/api/products`
 - UI management untuk user dan produk
+- AI Support chat pada `/dashboard/ai-support` melalui `/api/ai/chat`
 
 ## Setup
 
