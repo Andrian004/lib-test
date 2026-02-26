@@ -11,6 +11,9 @@ export default function Home() {
           <Link href="/login" className="btn inline-block bg-indigo-500 text-white hover:bg-indigo-400">Login</Link>
           <Link href="/register" className="btn inline-block bg-white/10 text-white hover:bg-white/20">Register</Link>
         </div>
+<!--         <Link href="/dashboard" className="btn mt-6 inline-block bg-indigo-500 text-white hover:bg-indigo-400">
+          Buka Dashboard
+        </Link> -->
       </div>
     </main>
   );
