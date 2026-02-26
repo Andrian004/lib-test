@@ -1,13 +1,20 @@
 import { PrismaClient, Role, Status } from '@prisma/client';
+import { randomBytes, scryptSync } from 'crypto';
 
 const prisma = new PrismaClient();
+
+function hashPassword(password: string) {
+  const salt = randomBytes(16).toString('hex');
+  const hash = scryptSync(password, salt, 64).toString('hex');
+  return `${salt}:${hash}`;
+}
 
 async function main() {
   await prisma.user.createMany({
     data: [
-      { name: 'Rani Putri', email: 'rani@company.id', role: Role.ADMIN },
-      { name: 'Budi Santoso', email: 'budi@company.id', role: Role.MANAGER },
-      { name: 'Dewi Anggraeni', email: 'dewi@company.id', role: Role.STAFF },
+      { name: 'Rani Putri', email: 'rani@company.id', role: Role.ADMIN, passwordHash: hashPassword('admin123') },
+      { name: 'Budi Santoso', email: 'budi@company.id', role: Role.MANAGER, passwordHash: hashPassword('manager123') },
+      { name: 'Dewi Anggraeni', email: 'dewi@company.id', role: Role.STAFF, passwordHash: hashPassword('staff123') },
     ],
     skipDuplicates: true,
   });

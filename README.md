@@ -15,6 +15,7 @@ Aplikasi dashboard modern untuk mengelola produk dan user menggunakan:
 - CRUD Product melalui `/api/products`
 - UI management untuk user dan produk
 - AI Support chat pada `/dashboard/ai-support` melalui `/api/ai/chat`
+- Authentication system: login, register, logout (session cookie)
 
 ## Setup
 
@@ -26,6 +27,7 @@ Aplikasi dashboard modern untuk mengelola produk dan user menggunakan:
    ```bash
    cp .env.example .env
    ```
+   lalu isi `JWT_SECRET` dan `OPENAI_API_KEY` jika ingin AI real-time.
 3. Jalankan migrasi dan generate prisma client:
    ```bash
    npx prisma migrate dev --name init
