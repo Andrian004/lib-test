@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { LogoutButton } from '@/components/auth/logout-button';
 
 const menus = [
   { href: '/dashboard', label: 'Overview' },
@@ -25,6 +26,7 @@ export function Sidebar() {
           </Link>
         ))}
       </nav>
+      <LogoutButton />
     </aside>
   );
 }
