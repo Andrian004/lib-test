@@ -5,7 +5,6 @@ const menus = [
   { href: '/dashboard', label: 'Overview' },
   { href: '/dashboard/users', label: 'Users' },
   { href: '/dashboard/products', label: 'Products' },
-  { href: '/dashboard/ai-support', label: 'AI Support' },
 ];
 
 export function Sidebar() {
