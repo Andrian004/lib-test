@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation';
 import { Sidebar } from '@/components/sidebar';
+import { AiRightbar } from '@/components/ai-rightbar';
 import { getSessionFromCookies } from '@/lib/auth';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
@@ -13,6 +14,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     <div className="min-h-screen bg-slate-950 text-slate-100 md:flex">
       <Sidebar />
       <main className="flex-1 p-4 md:p-8">{children}</main>
+      <AiRightbar />
     </div>
   );
 }
